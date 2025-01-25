@@ -1,0 +1,13 @@
+body {
+	font-family: monospace;
+	margin: auto;
+	padding: 20px;
+	max-width: 800px;
+	line-height: 1.5;
+}
+
+@media (max-width: 230px) {
+	body {
+		padding: 0;
+	}
+}
