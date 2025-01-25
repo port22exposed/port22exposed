@@ -1,10 +1,13 @@
 ---
 import Page from "../layouts/Page.astro"
 
-const description = `("programmer" | "gamer" | "FOSS contributor" | "aesthetic lover" | "person")`
+const description = `("gamer" | "aesthetic lover" | "programmer" | "FOSS contributor")`
 ---
 
 <Page description={description} bodyClass="h-card">
+	Pronouns:<span class="u-pronoun" style="white-space:pre">
+		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | 🏳️‍⚧️
+	</span>
 	<p class="p-note" style="text-align:center">
 		I am a <Fragment set:html={description.replace(/"([^"]*?)"/g, '"<b>$1</b>"')}></Fragment>
 	</p>
