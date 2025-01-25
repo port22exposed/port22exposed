@@ -1,0 +1,42 @@
+---
+import "../styles/global.css"
+import favicon from "/favicon.svg?url"
+interface Props {
+	title?: string
+	description?: string
+	class?: string
+	children: any
+}
+const title = Astro.props.title ?? "port22.exposed"
+const description = Astro.props.description
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg" href={favicon} />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#FF4539" />
+		<link rel="canonical" href={Astro.url.href} />
+
+		<meta name="robots" content="noai, noimageai" />
+		<meta name="tdm-reservation" content="1" />
+
+		<title>{title}</title>
+		<meta property="og:site_name" content={title} />
+		<meta property="og:title" content={title} />
+		<meta property="twitter:title" content={title} />
+
+		{Astro.props.description && (
+			<meta name="description" content={description} />
+			<meta property="og:description" content={description} />
+			<meta property="twitter:description" content={description} />
+		)}
+	</head>
+
+	<body class={Astro.props.class}>
+		<slot />
+	</body>
+</html>
