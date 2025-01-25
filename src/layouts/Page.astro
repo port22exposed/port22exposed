@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css"
 import favicon from "/favicon.svg?url"
+import Header from '../components/Header.astro'
 interface Props {
 	title?: string
 	description?: string
@@ -37,6 +38,7 @@ const description = Astro.props.description
 	</head>
 
 	<body class={Astro.props.bodyClass}>
+		<Header />
 		<slot />
 	</body>
 </html>
