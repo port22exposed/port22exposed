@@ -4,7 +4,7 @@ import favicon from "/favicon.svg?url"
 interface Props {
 	title?: string
 	description?: string
-	class?: string
+	bodyClass?: string
 	children: any
 }
 const title = Astro.props.title ?? "port22.exposed"
@@ -36,7 +36,7 @@ const description = Astro.props.description
 		)}
 	</head>
 
-	<body class={Astro.props.class}>
+	<body class={Astro.props.bodyClass}>
 		<slot />
 	</body>
 </html>
