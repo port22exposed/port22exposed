@@ -1,22 +1,11 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>port22.exposed</title>
-	</head>
-	<body>
-		Hello, World!
-	</body>
-</html>
+---
+import Page from "../layouts/Page.astro"
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const description = `("programmer" | "gamer" | "FOSS contributor" | "aesthetic lover" | "person")`
+---
+
+<Page description={description} bodyClass="h-card">
+	<p class="p-note" style="text-align:center">
+		I am a {description}
+	</p>
+</Page>
