@@ -1,9 +1,26 @@
+---
+import {
+	siDiscord,
+	siGithub,
+	siCodeberg,
+	siBluesky,
+} from 'simple-icons'
+
+import Social from './Social.astro';
+---
+
 <style is:global>
+	nav {
+		display: flex;
+		flex-flow: wrap;
+		align-items: center;
+		gap: 1ch;
+	}
 	.u-uid {
-		text-align: center;
-		display: block;
-		font-size: 27.5px;
+		font-size: 28.5px;
 		text-decoration: none;
+		flex-grow: 1;
+		margin: 0.5em 0px;
 	}
 </style>
 
@@ -11,4 +28,8 @@
     <a href="/" class="u-url u-uid" rel="author">
         <b><span class="p-name">port</span></b>22.exposed
     </a>
+	<Social href="https://github.com/port22exposed" icon={siGithub} />
+	<Social href="https://codeberg.org/port22exposed" icon={siCodeberg} />
+	<Social href="https://discord.com/users/1318383159645311009" icon={siDiscord} />
+	<Social href="https://bsky.app/profile/port22.exposed" icon={siBluesky} />
 </nav>
