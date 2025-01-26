@@ -4,11 +4,26 @@ import Page from "../layouts/Page.astro"
 const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS contributor")`
 ---
 
+<style is:global>
+	ul {
+		padding: 0%;
+		list-style: none;
+	}
+	li::before {
+		content: "→ "
+	}
+</style>
+
 <Page description={description} bodyClass="h-card">
 	Pronouns:<span class="u-pronoun" style="white-space:pre">
 		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | 🏳️‍⚧️
 	</span>
 	<p class="p-note">
-		I am a {description}
+		I am a {description}<br>
 	</p>
+	<h2>Whatcha workin on?</h2>
+	<ul>
+		<li><a href="https://github.com/reconception">Reconception Studios</a></li>
+		<li>coming soon</li>
+	</ul>
 </Page>
