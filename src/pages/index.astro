@@ -1,6 +1,8 @@
 ---
 import Page from "../layouts/Page.astro"
 
+import { siCplusplus, siRust, siZig, siC } from "simple-icons"
+
 const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS contributor")`
 ---
 
@@ -10,7 +12,10 @@ const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS cont
 		list-style: none;
 	}
 	li::before {
-		content: "→ "
+		content: "→ ";
+	}
+	a {
+		text-decoration-line: none;
 	}
 </style>
 
@@ -19,11 +24,46 @@ const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS cont
 		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | 🏳️‍⚧️
 	</span>
 	<p class="p-note">
-		I am a {description}<br>
+		I am a {description}<br /><br />
+		<small>(trust me I have more personality, I am just an awful writer)</small>
 	</p>
-	<h2>Whatcha workin on?</h2>
+	<h2>What am I learning?</h2>
 	<ul>
-		<li><a target="_blank" href="https://github.com/reconception">Reconception Studios</a></li>
-		<li>coming soon</li>
+		{
+			[
+				{
+					href: "https://godbolt.org/noscript/c",
+					icon: siC,
+					text: "C",
+				},
+				{
+					href: "https://isocpp.org/",
+					icon: siCplusplus,
+					text: "C++",
+				},
+				{
+					href: "https://ziglang.org",
+					icon: siZig,
+					text: "Zig",
+				},
+				{
+					href: "https://www.rust-lang.org/",
+					icon: siRust,
+					text: "Rust",
+				},
+			].map((element) => (
+				<li>
+					<a target="_blank" class="u-url" href={element.href}>
+						<Fragment
+							set:html={element.icon.svg.replace(
+								`role="img"`,
+								`role="img" style="vertical-align:middle" width="16" height="16" class="icon" fill="#${element.icon.hex}"`
+							)}
+						/>{" "}
+						{element.text}
+					</a>
+				</li>
+			))
+		}
 	</ul>
 </Page>
