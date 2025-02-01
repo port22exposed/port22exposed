@@ -18,23 +18,11 @@ const hex = Astro.props.hex || Astro.props.icon.hex
 	}
 </style>
 
-<style define:vars={{ hex: "#" + hex + "80" }}>
-    button {
-        transition: box-shadow 0.3s ease, text-shadow 0.3s ease;
-    }
-    button:hover {
-        text-shadow: 1px 0 0 currentColor;
-        box-shadow: 0 0 10px 5px var(--hex);
-    }
-</style>
-
-<button>
-    <a target="_blank" class="u-url" href={Astro.props.href}>
-        <Fragment
-            set:html={Astro.props.icon.svg.replace(
-                `role="img"`,
-                `role="img" style="vertical-align:middle" class="language-icon" fill="#${hex}"`
-            )}
-        />
-    </a>{" "}{Astro.props.icon.title}
-</button>
+<a target="_blank" class="u-url" href={Astro.props.href}>
+    <Fragment
+        set:html={Astro.props.icon.svg.replace(
+            `role="img"`,
+            `role="img" style="vertical-align:middle" class="language-icon" fill="#${Astro.props.hex || Astro.props.icon.hex}"`
+        )}
+    />{" "}{Astro.props.icon.title}
+</a>
