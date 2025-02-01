@@ -14,7 +14,7 @@ interface Props {
 		height: 2em;
 	}
 	@media (prefers-color-scheme: dark) {
-		svg {
+		svg.social {
 			fill: currentColor;
 		}
 	}
@@ -24,7 +24,7 @@ interface Props {
     <Fragment
         set:html={Astro.props.icon.svg.replace(
             `role="img"`,
-            `role="img" width="32" height="32" class="social" fill="#${Astro.props.icon.hex}"`
+            `role="img" class="social" fill="#${Astro.props.icon.hex}"`
         )}
     />
 </a>

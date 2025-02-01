@@ -1,19 +1,14 @@
 ---
+import { siCplusplus, siRust, siZig, siC } from "simple-icons"
+
 import Page from "../layouts/Page.astro"
 
-import { siCplusplus, siRust, siZig, siC } from "simple-icons"
+import Language from "../components/buttons/Language.astro"
 
 const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS contributor")`
 ---
 
 <style is:global>
-	ul {
-		padding: 0%;
-		list-style: none;
-	}
-	li::before {
-		content: "→ ";
-	}
 	a {
 		text-decoration-line: none;
 	}
@@ -28,42 +23,11 @@ const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS cont
 		<small>(trust me I have more personality, I am just an awful writer)</small>
 	</p>
 	<h2>What am I learning?</h2>
-	<ul>
-		{
-			[
-				{
-					href: "https://godbolt.org/noscript/c",
-					icon: siC,
-					text: "C",
-				},
-				{
-					href: "https://isocpp.org/",
-					icon: siCplusplus,
-					text: "C++",
-				},
-				{
-					href: "https://ziglang.org",
-					icon: siZig,
-					text: "Zig",
-				},
-				{
-					href: "https://www.rust-lang.org/",
-					icon: siRust,
-					text: "Rust",
-				},
-			].map((element) => (
-				<li>
-					<a target="_blank" class="u-url" href={element.href}>
-						<Fragment
-							set:html={element.icon.svg.replace(
-								`role="img"`,
-								`role="img" style="vertical-align:middle" width="16" height="16" class="icon" fill="#${element.icon.hex}"`
-							)}
-						/>{" "}
-						{element.text}
-					</a>
-				</li>
-			))
-		}
-	</ul>
+	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+		<Language icon={siC} href="https://godbolt.org/noscript/c" />
+		<Language icon={siCplusplus} href="https://isocpp.org/" />
+		<Language icon={siZig} href="https://ziglang.org/" />
+		<Language icon={siRust} href="https://rust-lang.org/" hex="f83e1a" />
+	</div>
+	<br/>
 </Page>
