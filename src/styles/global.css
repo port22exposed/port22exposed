@@ -24,10 +24,3 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, span:hover {
 a {
 	text-decoration-line: none;
 }
-
-button {
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	border-radius: 2px;
-}
