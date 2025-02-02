@@ -1,9 +1,9 @@
 ---
-import { siCplusplus, siRust, siZig, siC } from "simple-icons"
+import { siCplusplus, siSolid, siRust, siZig, siC } from "simple-icons"
 
 import Page from "../layouts/Page.astro"
 
-import Language from "../components/buttons/Language.astro"
+import SimpleIconLabel from "../components/SimpleIconLabel.astro"
 
 const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS contributor")`
 ---
@@ -23,11 +23,18 @@ const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS cont
 		<small>(trust me I have more personality, I am just an awful writer)</small>
 	</p>
 	<h2>What am I learning?</h2>
-	<div style="display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
-		<Language icon={siC} href="https://godbolt.org/noscript/c" />
-		<Language icon={siCplusplus} href="https://isocpp.org/" />
-		<Language icon={siZig} href="https://ziglang.org/" />
-		<Language icon={siRust} href="https://rust-lang.org/" hex="f83e1a" />
-	</div>
+	<ul style="display:grid;gap:8px;">
+		<li style="font-size:large">Languages</li>
+		<ul style="display:grid;gap:8px;">
+			<li><SimpleIconLabel icon={siC} href="https://godbolt.org/noscript/c" /></li>
+			<li><SimpleIconLabel icon={siCplusplus} href="https://isocpp.org/" /></li>
+			<li><SimpleIconLabel icon={siZig} href="https://ziglang.org/" /></li>
+			<li><SimpleIconLabel icon={siRust} href="https://rust-lang.org/" hex="f83e1a" /></li>
+		</ul>
+		<li style="font-size:large">Technology</li>
+		<ul style="display:grid;gap:8px;">
+			<li><SimpleIconLabel icon={siSolid} href="https://solidjs.com/" /></li>
+		</ul>
+	</ul>
 	<br/>
 </Page>

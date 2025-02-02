@@ -11,7 +11,7 @@ const hex = Astro.props.hex || Astro.props.icon.hex
 ---
 
 <style is:global>
-	svg.language-icon {
+	svg.simple-icon-label {
 		vertical-align: middle;
 		width: 24px;
 		height: 24px;
@@ -22,7 +22,7 @@ const hex = Astro.props.hex || Astro.props.icon.hex
     <Fragment
         set:html={Astro.props.icon.svg.replace(
             `role="img"`,
-            `role="img" style="vertical-align:middle" class="language-icon" fill="#${Astro.props.hex || Astro.props.icon.hex}"`
+            `role="img" height="24px" width="24px" style="vertical-align:middle" class="simple-icon-label" fill="#${Astro.props.hex || Astro.props.icon.hex}"`
         )}
     />{" "}{Astro.props.icon.title}
 </a>
