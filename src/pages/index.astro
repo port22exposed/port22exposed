@@ -19,7 +19,7 @@ const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS cont
 		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | 🏳️‍⚧️
 	</span>
 	<p class="p-note">
-		I am a {description}<br /><br />
+		I am a {<Fragment set:html={description.replaceAll(/"[^"\\]*(?:\\.[^"\\]*)*"/g, "<span>$&</span>")} />}<br /><br />
 		<small>(trust me I have more personality, I am just an awful writer)</small>
 	</p>
 	<h2>What am I learning?</h2>
