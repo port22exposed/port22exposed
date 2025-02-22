@@ -22,7 +22,7 @@ const hex = Astro.props.hex || Astro.props.icon.hex
     <Fragment
         set:html={Astro.props.icon.svg.replace(
             `role="img"`,
-            `role="img" height="24px" width="24px" style="vertical-align:middle" class="simple-icon-label" fill="#${Astro.props.hex || Astro.props.icon.hex}"`
+            `role="img" height="24px" width="24px" style="vertical-align:middle" class="simple-icon-label" fill="#${hex}"`
         )}
     />{" "}{Astro.props.icon.title}
 </a>
