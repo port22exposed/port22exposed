@@ -11,7 +11,7 @@ body {
 	padding: 20px;
 	max-width: 800px;
 	line-height: 1.5;
-	font-size: 14px;
+	font-size: medium;
 }
 
 @media (max-width: 230px) {
@@ -20,11 +20,11 @@ body {
 	}
 }
 
-h1, h2, h3, h4, h5, h6, span {
+h1, h2, h3, h4, h5, h6, span, .highlightHover {
 	transition: background-color 0.1s ease;
 }
 
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, span:hover {
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, span:hover, .highlightHover:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
