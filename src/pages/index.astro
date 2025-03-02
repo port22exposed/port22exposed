@@ -1,40 +1,50 @@
 ---
-import { siCplusplus, siSolid, siRust, siZig, siC } from "simple-icons"
-
 import Page from "../layouts/Page.astro"
-
-import SimpleIconLabel from "../components/SimpleIconLabel.astro"
-
-const description = `("gamer" && "aesthetic lover" && "programmer" && "FOSS contributor")`
+import Card from "../components/Card.astro"
 ---
 
 <style is:global>
-	a {
-		text-decoration-line: none;
+	.card-container {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  padding: 10px;
+	  box-sizing: border-box;
+	}
+  
+	.card-container > * {
+	  flex: 1 1 300px;
+	  max-width: 100%;
 	}
 </style>
 
-<Page description={description} bodyClass="h-card">
+<Page
+	description="sysadmin, software engineer, privacy advocate and caffeine addict"
+	bodyClass="h-card"
+>
 	Pronouns: <span class="u-pronoun" style="white-space:pre">
-		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | 🏳️‍⚧️
+		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | <a
+			target="_blank"
+			class="u-url highlightHover"
+			href="https://en.wikipedia.org/wiki/Transgender#Transfeminine">🏳️‍⚧️</a
+		>
 	</span>
+	<h1 style="font-family:monospace;">HELLO!</h1>
 	<p class="p-note">
-		I am a {<Fragment set:html={description.replaceAll(/"[^"\\]*(?:\\.[^"\\]*)*"/g, "<span>$&</span>")} />}<br /><br />
-		<small>(trust me I have more personality, I am just an awful writer)</small>
+		I am a sysadmin, software engineer, privacy advocate and <s>possible</s> caffeine addict...
 	</p>
-	<h2>What am I learning?</h2>
-	<ul style="display:grid;gap:8px;">
-		<li style="font-size:large">Languages</li>
-		<ul style="display:grid;gap:12px;">
-			<li><SimpleIconLabel icon={siC} href="https://godbolt.org/noscript/c" /></li>
-			<li><SimpleIconLabel icon={siCplusplus} href="https://isocpp.org/" /></li>
-			<li><SimpleIconLabel icon={siZig} href="https://ziglang.org/" /></li>
-			<li><SimpleIconLabel icon={siRust} href="https://rust-lang.org/" hex="f83e1a" /></li>
-		</ul>
-		<li style="font-size:large">Technology</li>
-		<ul style="display:grid;gap:12px;">
-			<li><SimpleIconLabel icon={siSolid} href="https://solidjs.com/" /></li>
-		</ul>
-	</ul>
-	<br/>
+	<p>I love everything I do but here's a non-exhaustive list of some of my favourites:</p>
+	<div class="card-container">
+		<Card
+			title="Intensity"
+			description="Post-quantum end-to-end-encrypted chat server, and client."
+			href="https://github.com/port22exposed/intensity"
+		/>
+		<Card
+			title="Port 443"
+			description="Semi-public Discord server for practically anyone."
+			href="https://discord.gg/qH3EMgA4aS"
+		/>
+	</div>
+	<br />
 </Page>

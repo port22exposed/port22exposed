@@ -6,6 +6,16 @@
 	:root { font-family: InterVariable, sans-serif; }
 }
 
+:root {
+	--card-bg: #eff1f5;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--card-bg: #1e1e2e;
+	}
+}
+
 body {
 	margin: auto;
 	padding: 20px;
