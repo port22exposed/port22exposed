@@ -1,12 +1,7 @@
 ---
-import {
-	siDiscord,
-	siGithub,
-	siCodeberg,
-	siBluesky,
-} from 'simple-icons'
+import { siDiscord, siGithub, siCodeberg, siTelegram, siBluesky } from "simple-icons"
 
-import Social from './Social.astro';
+import Social from "./Social.astro"
 ---
 
 <style>
@@ -25,11 +20,12 @@ import Social from './Social.astro';
 </style>
 
 <nav>
-    <a href="/" class="u-url u-uid" rel="author">
-        <b><span class="p-name">port</span></b>22.exposed
-    </a>
+	<a href="/" class="u-url u-uid" rel="author">
+		<b><span class="p-name">port</span></b>22.exposed
+	</a>
 	<Social href="https://github.com/port22exposed" icon={siGithub} />
 	<Social href="https://codeberg.org/port22exposed" icon={siCodeberg} />
 	<Social href="https://discord.com/users/1318383159645311009" icon={siDiscord} />
+	<Social href="https://t.me/crtsmasher" icon={siTelegram} />
 	<Social href="https://bsky.app/profile/port22.exposed" icon={siBluesky} />
 </nav>
