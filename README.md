@@ -6,6 +6,4 @@
     Kasane Teto plush image source from <a href="https://kasanetetoplush.com">kasanetetoplush.com</a>
   </p>
 </div>
-<div align="center" style="font-size:2em; font-weight:bold;">
-  hi, i'm <a href="https://port22.exposed">charli</a>!
-</div>
+<h1 align="center">hi, i'm <a href="https://port22.exposed">charli</a>!</h1>
