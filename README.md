@@ -1,6 +1,11 @@
-### 👋 Hello, I am port!
-
-##### Currently locked away in /dev/null, however I am looking to move up to higher positions such as /dev/urandom.
-##### I also have a [website](https://port22.exposed) like many others on this platform, check it out if you'd like.
-
-###### Final notice, wake up, wake up, wake up.
+<div align="center">
+  <a href="https://port22.exposed">
+    <img src="./public/teto-spin.gif" alt="Banner which is a chibi drawing of Kasane Teto." height="50%"width="50%">
+  </a>
+  <p style="font-size:small;">
+    Kasane Teto plush image source from <a href="https://kasanetetoplush.com">kasanetetoplush.com</a>
+  </p>
+</div>
+<div align="center" style="font-size:2em; font-weight:bold;">
+  hi, i'm <a href="https://port22.exposed">charli</a>!
+</div>
