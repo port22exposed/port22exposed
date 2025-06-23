@@ -2,36 +2,38 @@
 interface Props {
 	title: string
 	description: string
-  href: string
+	href: string
 }
 ---
 
 <style>
-  .card {
-    width: 350px;
-    padding: 10px;
-    border: 1px solid gray;
-    box-shadow: 
-      5px 0 5px -5px rgba(0, 0, 0, 0.5),  /* Right shadow */
-      -5px 0 5px -5px rgba(0, 0, 0, 0.5), /* Left shadow */
-      0 5px 5px -5px rgba(0, 0, 0, 0.5),  /* Bottom shadow */
-      0 -5px 5px -5px rgba(0, 0, 0, 0.5); /* Top shadow */
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--card-bg);
-  }
+	.card {
+		width: 350px;
+		padding: 10px;
+		border: 1px solid gray;
+		box-shadow:
+			5px 0 5px -5px rgba(0, 0, 0, 0.5),
+			/* Right shadow */ -5px 0 5px -5px rgba(0, 0, 0, 0.5),
+			/* Left shadow */ 0 5px 5px -5px rgba(0, 0, 0, 0.5),
+			/* Bottom shadow */ 0 -5px 5px -5px rgba(0, 0, 0, 0.5); /* Top shadow */
+		border-radius: 8px;
+		overflow: hidden;
+		background: var(--card-bg);
+	}
 
-  .card-title {
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
+	.card-title {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
 
-  .card-description {
-    margin: 0;
-  }
+	.card-description {
+		margin: 0;
+	}
 </style>
 
 <div class="card">
-  <a target="_blank" class="u-url" href={Astro.props.href}><h3 class="card-title">{Astro.props.title}</h3></a>
-  <p class="card-description">{Astro.props.description}</p>
+	<a target="_blank" class="u-url" href={Astro.props.href}
+		><h3 class="card-title">{Astro.props.title}</h3></a
+	>
+	<p class="card-description">{Astro.props.description}</p>
 </div>

@@ -2,7 +2,7 @@
 import type { SimpleIcon } from "simple-icons"
 
 interface Props {
-    href: string
+	href: string
 	icon: SimpleIcon
 }
 ---
@@ -21,10 +21,10 @@ interface Props {
 </style>
 
 <a href={Astro.props.href} target="_blank" rel="me" class="u-url" style="display: block">
-    <Fragment
-        set:html={Astro.props.icon.svg.replace(
-            `role="img"`,
-            `role="img" class="social" fill="#${Astro.props.icon.hex}"`
-        )}
-    />
+	<Fragment
+		set:html={Astro.props.icon.svg.replace(
+			`role="img"`,
+			`role="img" class="social" fill="#${Astro.props.icon.hex}"`
+		)}
+	/>
 </a>
