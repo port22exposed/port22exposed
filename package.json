@@ -10,8 +10,8 @@
     "deploy": "wrangler pages deploy dist"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.4.1",
-    "astro": "5.10.0",
+    "@astrojs/sitemap": "3.5.1",
+    "astro": "5.13.5",
     "simple-icons": "^14.3.0"
   },
   "devDependencies": {
