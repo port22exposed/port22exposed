@@ -7,16 +7,35 @@
 }
 
 :root {
-	--card-bg: #eff1f5;
+	--accent: #d7474b;
+	--text: #545464;
+	--background: #f2ecbc;
+	--url-unvisited: #73A7BC;
+	--url-visited: #624c83;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--card-bg: #1e1e2e;
+		--accent: #E46876;
+		--text: #acaeac;
+		--background: #181616;
+		--url-unvisited: #72A7BC;
+		--url-visited: #938AA9;
 	}
 }
 
+a:link{
+	color:var(--url-unvisited);
+}
+
+a:visited {
+	color: var(--url-visited);
+}  
+
 body {
+	background-color: var(--background);
+	color: var(--text);
+
 	margin: auto;
 	padding: 20px;
 	max-width: 800px;
