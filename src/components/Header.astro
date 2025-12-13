@@ -16,11 +16,23 @@ import Social from "./Social.astro"
 		text-decoration: none;
 		flex-grow: 1;
 		margin: 0.5em 0px;
+		display: flex;
+		align-items: center;
+	}
+
+	.u-photo.profile-pic {
+		width: 48px;
+		height: 48px;
+		border: 2px solid var(--accent);
+		border-radius: 2.5%;
+		margin-right: 0.5ch;
+		vertical-align: middle;
 	}
 </style>
 
 <nav>
 	<a href="/" class="u-url u-uid" rel="author">
+		<img src="/pfp.png" alt="An illustration of Kasane Teto" class="u-photo profile-pic" />
 		<b><span class="p-name">charli</span></b>@port22.exposed
 	</a>
 	<Social href="https://github.com/port22exposed" icon={siGithub} />
