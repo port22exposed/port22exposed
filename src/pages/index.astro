@@ -2,21 +2,6 @@
 import Page from "../layouts/Page.astro"
 ---
 
-<style is:global>
-	.card-container {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		padding: 10px;
-		box-sizing: border-box;
-	}
-
-	.card-container > * {
-		flex: 1 1 300px;
-		max-width: 100%;
-	}
-</style>
-
 <Page
 	description="sysadmin, software engineer, privacy advocate and caffeine addict"
 	bodyClass="h-card"
@@ -32,5 +17,7 @@ import Page from "../layouts/Page.astro"
 	<p class="p-note">
 		I am a sysadmin, software engineer, privacy advocate and amateur reverse engineer.
 	</p>
+	<br />
+	<video style="filter:blur(25px);z-index:0;opacity:25%;display:block;margin-left:auto;margin-right:auto" src="/teto-spin.webm" autoplay loop muted />
 	<br />
 </Page>
