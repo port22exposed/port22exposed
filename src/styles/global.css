@@ -11,7 +11,7 @@
 }
 
 :root {
-	--accent: #c34043;
+	--accent: #d27e99;
 	--text: #dcd7ba;
 	--background: #1f1f28;
 	--url-unvisited: #7e9cd8;
@@ -20,7 +20,6 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--accent: #e46876;
 		--text: #acaeac;
 		--background: #181616;
 		--url-unvisited: #72a7bc;
