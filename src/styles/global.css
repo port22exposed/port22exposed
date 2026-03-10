@@ -1,36 +1,40 @@
 :root {
 	font-family: Inter, sans-serif;
-	font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+	font-feature-settings:
+		"liga" 1,
+		"calt" 1; /* fix for Chrome */
 }
 @supports (font-variation-settings: normal) {
-	:root { font-family: InterVariable, sans-serif; }
+	:root {
+		font-family: InterVariable, sans-serif;
+	}
 }
 
 :root {
 	--accent: #d7474b;
-	--text: #545464;
-	--background: #f2ecbc;
-	--url-unvisited: #73A7BC;
+	--text: #dcd7ba;
+	--background: #1f1f28;
+	--url-unvisited: #73a7bc;
 	--url-visited: #624c83;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--accent: #E46876;
+		--accent: #e46876;
 		--text: #acaeac;
 		--background: #181616;
-		--url-unvisited: #72A7BC;
-		--url-visited: #938AA9;
+		--url-unvisited: #72a7bc;
+		--url-visited: #938aa9;
 	}
 }
 
-a:link{
-	color:var(--url-unvisited);
+a:link {
+	color: var(--url-unvisited);
 }
 
 a:visited {
 	color: var(--url-visited);
-}  
+}
 
 body {
 	background-color: var(--background);
@@ -49,12 +53,26 @@ body {
 	}
 }
 
-h1, h2, h3, h4, h5, h6, span, .highlightHover {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+.highlightHover {
 	transition: background-color 0.1s ease;
 }
 
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, span:hover, .highlightHover:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+span:hover,
+.highlightHover:hover {
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 a {
