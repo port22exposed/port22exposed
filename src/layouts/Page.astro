@@ -9,7 +9,7 @@ interface Props {
 	bodyClass?: string
 	children: any
 }
-const title = Astro.props.title ?? "port22.exposed"
+const title = Astro.props.title ?? "charli"
 const description = Astro.props.description
 ---
 
@@ -20,7 +20,7 @@ const description = Astro.props.description
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/x-icon" href={favicon} />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="theme-color" content="#ffffff" />
+		<meta name="theme-color" content="#d27e99" />
 		<link rel="canonical" href={Astro.url.href} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -28,7 +28,6 @@ const description = Astro.props.description
 		<meta name="tdm-reservation" content="1" />
 
 		<title>{title}</title>
-		<meta property="og:site_name" content={title} />
 		<meta property="og:title" content={title} />
 		<meta property="og:image" content="/pfp.webp" />
 

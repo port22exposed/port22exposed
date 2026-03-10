@@ -11,11 +11,11 @@
 }
 
 :root {
-	--accent: #d7474b;
+	--accent: #c34043;
 	--text: #dcd7ba;
 	--background: #1f1f28;
-	--url-unvisited: #73a7bc;
-	--url-visited: #624c83;
+	--url-unvisited: #7e9cd8;
+	--url-visited: #957fb8;
 }
 
 @media (prefers-color-scheme: dark) {
