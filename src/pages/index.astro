@@ -2,22 +2,45 @@
 import Page from "../layouts/Page.astro"
 ---
 
-<Page
-	description="sysadmin, software engineer, privacy advocate and caffeine addict"
-	bodyClass="h-card"
->
-	Pronouns: <span class="u-pronoun" style="white-space:pre">
-		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span> | <a
-			target="_blank"
-			class="u-url highlightHover"
-			href="https://en.wikipedia.org/wiki/Transgender#Transfeminine">🏳️‍⚧️</a
-		>
-	</span>
+<style>
+	/*
+    Idea taken from hoodie (https://hoodb0.codeberg.page/)
+*/
+	#pronounce {
+		background: linear-gradient(
+				90deg,
+				rgb(91, 206, 250) 0%,
+				rgb(245, 169, 184) 25%,
+				rgb(255, 255, 255) 50%,
+				rgb(245, 169, 184) 75%,
+				rgb(91, 206, 250) 100%
+			)
+			text;
+		color: transparent;
+	}
+</style>
+
+<Page bodyClass="h-card" description="im secretly a ghost">
+	Pronouns: <a
+		target="_blank"
+		class="u-url highlightHover"
+		href="https://en.wikipedia.org/wiki/Transgender#Transfeminine"
+		class="u-pronoun"
+		style="white-space:pre"
+		id="pronounce"
+	>
+		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span>
+	</a>
 	<h1 style="font-family:monospace;">HELLO!</h1>
 	<p class="p-note">
 		I am a sysadmin, software engineer, privacy advocate and amateur reverse engineer.
 	</p>
 	<br />
-	<video style="filter:blur(25px);z-index:0;opacity:25%;display:block;margin-left:auto;margin-right:auto;max-width:100%;width:100%;height:auto;margin:0 auto;object-fit:cover;" src="/teto-spin.webm" autoplay loop muted />
+	<video
+		style="filter:blur(25px);z-index:0;opacity:25%;display:block;margin-left:auto;margin-right:auto;max-width:100%;width:100%;height:auto;margin:0 auto;object-fit:cover;"
+		src="/teto-spin.webm"
+		autoplay
+		loop
+		muted></video>
 	<br />
 </Page>
