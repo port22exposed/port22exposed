@@ -1,20 +1,19 @@
 {
-  "name": "test",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "deploy": "wrangler pages deploy dist"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "3.7.1",
-    "astro": "6.0.2",
-    "simple-icons": "^14.15.0"
-  },
-  "devDependencies": {
-    "wrangler": "^3.114.15"
-  }
+	"name": "test",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"deploy": "wrangler pages deploy dist"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "3.7.1",
+		"astro": "6.0.2",
+		"simple-icons": "^14.15.0"
+	},
+	"devDependencies": {
+		"wrangler": "^3.114.15"
+	}
 }
