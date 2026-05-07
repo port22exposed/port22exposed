@@ -1,5 +1,13 @@
 ---
-import { siGithub, siCodeberg, siGitlab, siDiscord, siBluesky, siMastodon } from "simple-icons"
+import {
+	siGithub,
+	siForgejo,
+	siCodeberg,
+	siGitlab,
+	siDiscord,
+	siBluesky,
+	siMastodon,
+} from "simple-icons"
 
 import Social from "./Social.astro"
 ---
@@ -35,8 +43,10 @@ import Social from "./Social.astro"
 		<img src="/pfp.webp" alt="An illustration of Kasane Teto" class="u-photo profile-pic" />
 		<span class="p-name" style="color:var(--accent)">charli</span>@port22.exposed
 	</a>
-	<Social href="https://github.com/port22exposed" icon={siGithub} />
+	<!-- TODO: eventually using the lethal horse git logo would be cool but i'm lackin in time atm -->
+	<Social href="https://git.lethal.horse/port22exposed" icon={siForgejo} />
 	<Social href="https://codeberg.org/port22exposed" icon={siCodeberg} />
+	<Social href="https://github.com/port22exposed" icon={siGithub} />
 	<Social href="https://gitlab.com/port22exposed" icon={siGitlab} />
 	<Social href="https://discord.com/users/1318383159645311009" icon={siDiscord} />
 	<Social href="https://infosec.exchange/@charli" icon={siMastodon} />
