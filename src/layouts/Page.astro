@@ -1,4 +1,5 @@
 ---
+import "../styles/normalize.css"
 import "../styles/global.css"
 import favicon from "/favicon.ico?url"
 import Header from '../components/Header.astro'
@@ -18,11 +19,13 @@ const description = Astro.props.description
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="fediverse:creator" content="@charli@infosec.exchange">
 		<link rel="icon" type="image/x-icon" href={favicon} />
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="#d27e99" />
 		<link rel="canonical" href={Astro.url.href} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="darkreader-lock" />
 
 		<meta name="robots" content="noai, noimageai" />
 		<meta name="tdm-reservation" content="1" />
@@ -30,6 +33,7 @@ const description = Astro.props.description
 		<title>{title}</title>
 		<meta property="og:title" content={title} />
 		<meta property="og:image" content="/pfp.webp" />
+		<meta property="og:type" content="profile" />
 
 		{Astro.props.description && (
 			<meta name="description" content={description} />
