@@ -10,7 +10,9 @@
 	}
 }
 
+/* TODO: accent-color is defined now in three places the meta headers and twice here maybe move to using accent-color directly var */
 :root {
+	accent-color: var(--accent);
 	--accent: #d27e99;
 	--text: #dcd7ba;
 	--background: #1f1f28;
