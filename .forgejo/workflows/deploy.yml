@@ -1,12 +1,10 @@
-name: Deploy
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  lint:
+  deploy:
     runs-on: docker
     steps:
       - name: Checkout
