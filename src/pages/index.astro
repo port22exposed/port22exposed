@@ -1,19 +1,23 @@
 ---
 import Page from "../layouts/Page.astro"
+import Marquee from "../components/Marquee.astro"
+import { Image } from "astro:assets"
+
+import hoodie from "../media/hood.webp"
 ---
 
 <style>
 	/*
-    Idea taken from hoodie (https://hoodb0.codeberg.page/)
-*/
+        Idea taken from hoodie (https://hoodb0.codeberg.page/)
+    */
 	#pronounce {
 		background: linear-gradient(
 				90deg,
-				rgb(91, 206, 250) 0%,
-				rgb(245, 169, 184) 25%,
-				rgb(255, 255, 255) 50%,
-				rgb(245, 169, 184) 75%,
-				rgb(91, 206, 250) 100%
+				light-dark(oklch(0.6 0.15 226.51), oklch(0.8025 0.1203 226.51)) 0%,
+				light-dark(oklch(0.65 0.12 6.32), oklch(0.8118 0.0912 6.32)) 25%,
+				light-dark(oklch(0.8 0 0), oklch(1 0 0)) 50%,
+				light-dark(oklch(0.65 0.12 6.32), oklch(0.8118 0.0912 6.32)) 75%,
+				light-dark(oklch(0.6 0.15 226.51), oklch(0.8025 0.1203 226.51)) 100%
 			)
 			text;
 		color: transparent;
@@ -22,7 +26,6 @@ import Page from "../layouts/Page.astro"
 
 <Page bodyClass="h-card" description="im secretly a ghost">
 	Pronouns: <a
-		target="_blank"
 		class="u-url highlightHover"
 		href="https://en.wikipedia.org/wiki/Transgender#Transfeminine"
 		class="u-pronoun"
@@ -31,16 +34,34 @@ import Page from "../layouts/Page.astro"
 	>
 		<span class="p-x-pronoun-nominative">she</span>/<span class="p-x-pronoun-oblique">her</span>
 	</a>
-	<h1 style="font-family:monospace;">HELLO!</h1>
-	<p class="p-note">
-		I am a sysadmin, software engineer, privacy advocate and amateur reverse engineer.
-	</p>
 	<br />
-	<video
-		style="filter:blur(25px);z-index:0;opacity:25%;display:block;margin-left:auto;margin-right:auto;max-width:100%;width:100%;height:auto;margin:0 auto;object-fit:cover;"
-		src="/teto-spin.webm"
-		autoplay
-		loop
-		muted></video>
-	<br />
+	<article>
+		<Marquee text="HELLO!" />
+		<section>
+			<span>
+				I like software because hardware makes me remove my headphones. I'm very bad at
+				summarising myself but I have been described by some friends as "calm but energetic"
+				and that "i like horses."
+			</span>
+		</section>
+	</article>
+	<article>
+		<Marquee text="HOODIE!" />
+		<section>
+			<figure>
+				<Image width={128} height={128} src={hoodie} alt="vennie by shoritsu!" />
+			</figure>
+			<span>
+				{
+					Array.from({ length: 6 }, () => (
+						<li>
+							<a target="_blank" href="https://hood.pink">
+								look!
+							</a>
+						</li>
+					))
+				}
+			</span>
+		</section>
+	</article>
 </Page>
