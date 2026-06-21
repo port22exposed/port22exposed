@@ -19,41 +19,102 @@
 }
 
 :root {
-	color-scheme: light dark;
-	accent-color: var(--accent);
-	--accent: #d27e99;
-	--text: #dcd7ba;
-	--background: #1f1f28;
-	--url-unvisited: #7e9cd8;
-	--url-visited: #957fb8;
+	--black: oklch(18% 0.003 17.5);
+
+	--dark_grey: oklch(24% 0.006 17.6);
+	--grey: oklch(36% 0.003 17.3);
+	--bright_grey: oklch(47% 0.005 17.3);
+
+	--white: oklch(76% 0.03 55);
+	--bright_white: oklch(94.75% 0.04 73);
+
+	--red: oklch(62.7% 0.222 27.8);
+	--bright_red: oklch(67.7% 0.184 25);
+
+	--orange: oklch(69.2% 0.189 47.8);
+	--bright_orange: oklch(74.2% 0.137 56.3);
+
+	--yellow: oklch(80.8% 0.165 73.5);
+	--bright_yellow: oklch(87.8% 0.127 84.5);
+
+	--green: oklch(65.2% 0.141 142.1);
+	--bright_green: oklch(70.5% 0.114 142.9);
+
+	--blue: oklch(56.5% 0.13 253);
+	--bright_blue: oklch(67.6% 0.09 251.3);
+
+	--cyan: oklch(71.2% 0.112 198.7);
+	--bright_cyan: oklch(78.3% 0.118 198.5);
+
+	--magenta: oklch(61.2% 0.21 5.4);
+	--bright_magenta: oklch(63.5% 0.2 4.8);
+
+	--wide-margin: 3rem;
+	--narrow-margin: 0.8rem;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--text: #acaeac;
-		--background: #181616;
-		--url-unvisited: #72a7bc;
-		--url-visited: #938aa9;
+:root {
+	color-scheme: light dark;
+	accent-color: var(--accent);
+
+	--base-accent: #ed9fbd;
+	--accent: light-dark(oklch(from var(--base-accent) 0.75 calc(c * 1.75) h), var(--base-accent));
+
+	--black: oklch(18% 0.003 17.5);
+
+	--white: oklch(76% 0.03 55);
+	--bright_white: oklch(94.75% 0.04 73);
+}
+
+a {
+	text-decoration-line: none;
+}
+
+body::before {
+	width: 10000vw;
+	height: 10000vh;
+
+	position: fixed;
+	inset: -10px 0 0 0;
+	z-index: -20;
+
+	background-image: var(--bg-overlay);
+	background-repeat: repeat;
+	mix-blend-mode: multiply;
+	opacity: 25%;
+	content: "";
+
+	transition: transform 1s linear;
+
+	@media (prefers-color-scheme: light) {
+		filter: invert(1);
+		mix-blend-mode: screen;
+		opacity: 40%;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		animation: animate_background 500s linear infinite;
 	}
 }
 
-a:link {
-	color: var(--url-unvisited);
-}
-
-a:visited {
-	color: var(--url-visited);
+@keyframes animate_background {
+	from {
+		transform: translate(0px, 0px);
+	}
+	to {
+		transform: translate(-10000px, -10000px);
+	}
 }
 
 body {
-	background-color: var(--background);
-	color: var(--text);
+	color: light-dark(var(--black), var(--bright_white));
+	background-color: light-dark(var(--bright_white), var(--black));
 
 	margin: auto;
 	padding: 20px;
 	max-width: 800px;
 	line-height: 1.5;
-	font-size: medium;
+	font-size: large;
 }
 
 @media (max-width: 230px) {
@@ -75,6 +136,96 @@ body {
 	}
 }
 
-a {
-	text-decoration-line: none;
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+span:has(> li) {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 10px;
+	width: 100%;
+	max-width: min(750px, 95%);
+	gap: 7px;
+
+	border: 2px dashed var(--accent);
+	border-radius: 6px;
+	margin-block: 7px;
+
+	a:not(:has(img)) {
+		background-color: color-mix(in oklch, var(--accent), black 65%);
+		color: inherit;
+		text-decoration: none;
+		padding: 0 5px;
+		white-space: nowrap;
+		font-size: 22px;
+		font-family: "Departure Mono", monospace;
+	}
+
+	a:not(:has(img))::after {
+		content: " >";
+	}
+}
+
+section {
+	display: flex;
+	gap: 10px;
+	min-height: 128px;
+
+	@media only screen and (max-width: 750px) {
+		flex-direction: column;
+		align-items: center;
+
+		section figure {
+			width: 40%;
+		}
+	}
+
+	> * {
+		box-sizing: border-box;
+		background-color: color-mix(in oklch, var(--accent) 30%, transparent);
+		border: 2px solid color-mix(in oklch, var(--accent) 80%, transparent);
+		overflow: hidden;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 5px;
+		margin: 0px;
+		gap: 10px;
+		flex: 1;
+		min-width: 0;
+
+		> :has(p) {
+			width: 100%;
+		}
+
+		* {
+			max-width: 100%;
+		}
+	}
+
+	figure {
+		user-select: none;
+		font-size: unset;
+		width: 45%;
+		flex: none;
+
+		img {
+			width: 95%;
+			height: auto;
+		}
+	}
 }
