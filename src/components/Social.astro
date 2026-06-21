@@ -4,20 +4,15 @@ import type { SimpleIcon } from "simple-icons"
 interface Props {
 	href: string
 	icon: SimpleIcon
+	color?: string
 }
 ---
 
 <style is:global>
-    {/* TODO: get rid of the fill currentColor stuff and fixup GitHub's logo on dark backgrounds */}
 	svg.social {
 		vertical-align: middle;
 		width: 2em;
 		height: 2em;
-	}
-	@media (prefers-color-scheme: dark) {
-		svg.social {
-			fill: currentColor;
-		}
 	}
 </style>
 
@@ -25,7 +20,7 @@ interface Props {
 	<Fragment
 		set:html={Astro.props.icon.svg.replace(
 			`role="img"`,
-			`role="img" class="social" fill="#${Astro.props.icon.hex}"`,
+			`role="img" class="social" fill="${Astro.props.color ?? `#${Astro.props.icon.hex}`}"`,
 		)}
 	/>
 </a>
