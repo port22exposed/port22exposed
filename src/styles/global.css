@@ -115,6 +115,8 @@ body {
 	max-width: 800px;
 	line-height: 1.5;
 	font-size: large;
+
+	zoom: 0.75;
 }
 
 @media (max-width: 230px) {
