@@ -9,6 +9,9 @@ import {
 	siMastodon,
 } from "simple-icons"
 
+import { Image } from 'astro:assets';
+import pfp from "../media/pfp.webp";
+
 import Social from "./Social.astro"
 ---
 
@@ -29,8 +32,8 @@ import Social from "./Social.astro"
 	}
 
 	.u-photo.profile-pic {
-		width: 48px;
-		height: 48px;
+		width: 56px;
+		height: 56px;
 		border: 2px solid var(--accent);
 		border-radius: 2.5%;
 		margin-right: 0.5ch;
@@ -40,10 +43,16 @@ import Social from "./Social.astro"
 
 <nav>
 	<a style="color:unset" href="/" class="u-url u-uid" rel="author">
-		<img src="/pfp.webp" alt="An illustration of Kasane Teto" class="u-photo profile-pic" />
-		<span class="p-name" style="color:var(--accent)">charli</span>@port22.exposed
+		<Image
+            src={pfp}
+            alt="An illustration of Kasane Teto"
+            width={56}
+            height={56}
+            class="u-photo profile-pic"
+        />
+		<span><span class="p-name" style="color:var(--accent)">charli</span><wbr/>@port22.exposed</span>
 	</a>
-	<!-- TODO: eventually using the lethal horse git logo would be cool but i'm lackin in time atm -->
+	{<!-- TODO: eventually using the lethal horse git logo would be cool but i'm lackin in time atm -->}
 	<Social href="https://git.lethal.horse/port22exposed" icon={siForgejo} />
 	<Social href="https://codeberg.org/port22exposed" icon={siCodeberg} />
 	<Social href="https://github.com/port22exposed" icon={siGithub} />
