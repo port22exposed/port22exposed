@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/teto-spin.gif" alt="Banner which is a chibi drawing of Kasane Teto." height="50%"width="50%">
+  <img src="./assets/teto-spin.gif" alt="Banner which is a chibi drawing of Kasane Teto." height="50%"width="50%">
   <p style="font-size:small;">
     Kasane Teto plush image source from <a href="https://kasanetetoplush.com">kasanetetoplush.com</a>
   </p>
