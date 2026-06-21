@@ -1,0 +1,62 @@
+---
+import { nextMarqueeIndex } from "../lib/marquee-counter"
+
+interface Props {
+	text: string
+	reverse?: boolean
+	speed?: number
+}
+
+const { text, reverse, speed = 20 } = Astro.props
+
+const chunk = text + "\u00A0"
+const raw = chunk.repeat(Math.ceil(200 / chunk.length))
+const spaced = raw.slice(0, 200)
+
+const isReverse = reverse ?? nextMarqueeIndex(Astro.url.pathname) % 2 === 1
+---
+
+<header data-reverse={isReverse || undefined} aria-label={text} style={`--speed: ${speed}s;`}>
+	<span aria-hidden="true">{spaced}</span>
+	<span aria-hidden="true">{spaced}</span>
+</header>
+
+<style>
+	@keyframes marquee-scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	header {
+		overflow: hidden;
+		white-space: nowrap;
+		font-family: "Departure Mono", monospace;
+		font-size: 20px;
+		font-weight: bold;
+
+		background-color: oklch(from var(--base-accent) l c h / 30%);
+		padding: 3px;
+		display: inline-flex;
+		user-select: none;
+
+		> span {
+			display: inline-block;
+			animation: marquee-scroll var(--speed, 10s) linear infinite;
+			@media (prefers-reduced-motion: reduce) {
+				animation: none;
+			}
+		}
+
+		&[data-reverse] > span {
+			animation-direction: reverse;
+		}
+
+		&:hover > span {
+			animation-play-state: paused;
+		}
+	}
+</style>
