@@ -1,9 +1,21 @@
 ---
+import { getImage } from "astro:assets";
+
 import "../styles/normalize.css"
 import "../styles/global.css"
 import favicon from "/favicon.ico?url"
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+
+import bgOverlaySrc from "../media/background-overlay.png";
+
+const bgOverlay = await getImage({
+    src: bgOverlaySrc,
+    width: 128,
+    height: 128,
+    format: "webp",
+});
+
 interface Props {
 	title?: string
 	description?: string
@@ -22,7 +34,7 @@ const description = Astro.props.description
 		<meta name="fediverse:creator" content="@charli@infosec.exchange">
 		<link rel="icon" type="image/x-icon" href={favicon} />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="theme-color" content="#d27e99" />
+		<meta name="theme-color" content="#ed9fbd" />
 		<link rel="canonical" href={Astro.url.href} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="darkreader-lock" />
@@ -32,7 +44,7 @@ const description = Astro.props.description
 
 		<title>{title}</title>
 		<meta property="og:title" content={title} />
-		<meta property="og:image" content="/pfp.webp" />
+		<meta property="og:image" content="/media/pfp.webp" />
 		<meta property="og:type" content="profile" />
 
 		{Astro.props.description && (
@@ -41,9 +53,11 @@ const description = Astro.props.description
 		)}
 	</head>
 
-	<body role="main" class={Astro.props.bodyClass}>
+	<body style={`--bg-overlay: url('${bgOverlay.src}');`}>
 		<Header />
-		<slot />
+		<main>
+    		<slot />
+		<main/>
 		<Footer />
 	</body>
 </html>
