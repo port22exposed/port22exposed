@@ -116,7 +116,7 @@ body {
 	line-height: 1.5;
 	font-size: large;
 
-	zoom: 0.75;
+	/*zoom: 0.75;*/
 }
 
 @media (max-width: 230px) {
@@ -210,8 +210,8 @@ section {
 		padding: 5px;
 		margin: 0px;
 		gap: 10px;
-		flex: 1;
 		min-width: 0;
+		width: 100%;
 
 		> :has(p) {
 			width: 100%;
@@ -259,5 +259,27 @@ section {
 
 	@media only screen and (max-width: 750px) {
 		display: none;
+	}
+}
+
+a[href="https://hood.pink/"] {
+	&::after {
+		font-size: 19px;
+		content: "🩷";
+		width: 0px;
+
+		display: inline-block;
+		opacity: 0;
+
+		transition: all 0.5s;
+	}
+
+	&:hover::after {
+		opacity: 1;
+		width: 3ch;
+	}
+
+	&::before {
+		content: "< ";
 	}
 }

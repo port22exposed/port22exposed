@@ -11,6 +11,6 @@ export default defineConfig({
 	},
 	integrations: [sitemap()],
 	server: {
-		allowedHosts: ["buying-miller-aka-priest.trycloudflare.com"],
+		allowedHosts: ["bringing-bike-motivation-apart.trycloudflare.com"],
 	},
 })
