@@ -283,3 +283,7 @@ a[href="https://hood.pink/"] {
 		content: "< ";
 	}
 }
+
+p {
+	margin: 0;
+}
