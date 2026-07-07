@@ -3,7 +3,8 @@ import Page from "../layouts/Page.astro"
 import Marquee from "../components/Marquee.astro"
 import { Image } from "astro:assets"
 
-import hoodie from "../media/hood.webp"
+import hoodie from "../media/hood.avif"
+import charli from "../media/charli.avif"
 ---
 
 <style>
@@ -22,6 +23,16 @@ import hoodie from "../media/hood.webp"
 			text;
 		color: transparent;
 	}
+
+	@media only screen and (min-width: 750px) {
+		.wife-pfp {
+			margin-bottom: 180px;
+		}
+
+		.my-pfp {
+			margin-bottom: 220px;
+		}
+	}
 </style>
 
 <Page description="im secretly a ghost">
@@ -36,30 +47,34 @@ import hoodie from "../media/hood.webp"
 	</a>
 	<br />
 	<article>
-		<Marquee text="HELLO!" />
-		<section>
-			<span>
-				I like software because hardware makes me remove my headphones. I'm very bad at
-				summarising myself but I have been described by some friends as "calm but energetic"
-				and that "i like horses."
-			</span>
-		</section>
-	</article>
-	<article>
-		<Marquee text="HOODIE!" />
+		<Marquee text="HOODIE! CHARLI!" />
 		<section>
 			<figure>
-				<Image width={128} height={128} src={hoodie} alt="unknown pink haired character!" />
+				<Image
+					width={128}
+					height={128}
+					src={hoodie}
+					alt="unknown pink haired character!"
+					class="wife-pfp"
+				/>
 			</figure>
 			<span>
-				{
-					Array.from({ length: 6 }, () => (
-						<li>
-							<a href="https://hood.pink">look!</a>
-						</li>
-					))
-				}
+				<p>I like software because hardware makes me remove my headphones.</p>
+				<div id="string"></div>
+				<p>
+					I'm very bad at summarising myself but I have been described by some friends as
+					"calm but energetic" and that "i like horses."
+				</p>
 			</span>
+			<figure>
+				<Image
+					width={128}
+					height={128}
+					src={charli}
+					alt="unknown pink haired character!"
+					class="my-pfp"
+				/>
+			</figure>
 		</section>
 	</article>
 </Page>

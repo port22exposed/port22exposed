@@ -9,9 +9,6 @@ import {
 	siMastodon,
 } from "simple-icons"
 
-import { Image } from 'astro:assets';
-import pfp from "../media/pfp.webp";
-
 import Social from "./Social.astro"
 ---
 
@@ -30,26 +27,10 @@ import Social from "./Social.astro"
 		display: flex;
 		align-items: center;
 	}
-
-	.u-photo.profile-pic {
-		width: 56px;
-		height: 56px;
-		border: 2px solid var(--accent);
-		border-radius: 2.5%;
-		margin-right: 0.5ch;
-		vertical-align: middle;
-	}
 </style>
 
 <nav>
 	<a style="color:unset" href="/" class="u-url u-uid" rel="author">
-		<Image
-            src={pfp}
-            alt="unknown gray haired character!"
-            width={56}
-            height={56}
-            class="u-photo profile-pic"
-        />
 		<span><span class="p-name" style="color:var(--accent)">charli</span><wbr/>@port22.exposed</span>
 	</a>
 	{<!-- TODO: eventually using the lethal horse git logo would be cool but i'm lackin in time atm -->}

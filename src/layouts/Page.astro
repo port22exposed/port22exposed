@@ -33,7 +33,7 @@ const description = Astro.props.description
 		<meta name="fediverse:creator" content="@charli@infosec.exchange">
 		<link rel="icon" type="image/x-icon" href={favicon} />
 		<meta name="color-scheme" content="light dark" />
-		<meta name="theme-color" content="#ed9fbd" />
+		<meta name="theme-color" content="#3e4867" />
 		<link rel="canonical" href={Astro.url.href} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="darkreader-lock" />
@@ -43,7 +43,6 @@ const description = Astro.props.description
 
 		<title>{title}</title>
 		<meta property="og:title" content={title} />
-		<meta property="og:image" content="/media/pfp.webp" />
 		<meta property="og:type" content="profile" />
 
 		{Astro.props.description && (

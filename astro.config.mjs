@@ -10,4 +10,7 @@ export default defineConfig({
 		enabled: false,
 	},
 	integrations: [sitemap()],
+	server: {
+		allowedHosts: ["buying-miller-aka-priest.trycloudflare.com"],
+	},
 })

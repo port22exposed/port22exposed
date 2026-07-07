@@ -57,7 +57,7 @@
 	color-scheme: light dark;
 	accent-color: var(--accent);
 
-	--base-accent: #ed9fbd;
+	--base-accent: #3e4867;
 	--accent: light-dark(oklch(from var(--base-accent) 0.75 calc(c * 1.75) h), var(--base-accent));
 
 	--black: oklch(18% 0.003 17.5);
@@ -225,12 +225,39 @@ section {
 	figure {
 		user-select: none;
 		font-size: unset;
-		width: 45%;
-		flex: none;
+		width: 55%;
 
 		img {
 			width: 95%;
 			height: auto;
 		}
+	}
+}
+
+#string {
+	pointer-events: none;
+
+	width: 200%;
+	max-width: unset;
+	height: 200px;
+
+	margin-top: -150px;
+	margin-bottom: 20px;
+
+	&::before {
+		height: 100%;
+		width: 100%;
+		display: block;
+		content: "";
+
+		border: solid 2px;
+		border-color: white transparent transparent transparent;
+		border-radius: 200%/500px 500px 0 0;
+
+		transform: rotateX(180deg) rotateZ(-1deg);
+	}
+
+	@media only screen and (max-width: 750px) {
+		display: none;
 	}
 }
