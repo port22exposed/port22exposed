@@ -242,7 +242,7 @@ section {
 	height: 200px;
 
 	margin-top: -150px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 
 	&::before {
 		height: 100%;
@@ -260,6 +260,8 @@ section {
 	@media only screen and (max-width: 750px) {
 		display: none;
 	}
+
+	animation: string_move 5s infinite alternate ease-in-out;
 }
 
 a[href="https://hood.pink/"] {
@@ -286,4 +288,13 @@ a[href="https://hood.pink/"] {
 
 p {
 	margin: 0;
+}
+
+@keyframes string_move {
+	from {
+		transform: scaleX(1) translateY(0px);
+	}
+	to {
+		transform: scaleX(0.7) translateY(25px);
+	}
 }
