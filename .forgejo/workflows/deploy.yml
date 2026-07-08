@@ -10,10 +10,10 @@ jobs:
       - name: Checkout
         uses: https://data.forgejo.org/actions/checkout@v4
 
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
         with:
-          bun-version: latest
+          version: latest
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
