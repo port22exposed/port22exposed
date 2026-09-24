@@ -9,8 +9,8 @@ import charli from "../media/charli.avif"
 
 <style>
 	/*
-        Idea taken from Miruna (https://hood.pink/)
-    */
+	        Idea taken from Miruna (https://hood.pink/)
+	    */
 	#pronounce {
 		background: linear-gradient(
 				90deg,
@@ -23,20 +23,11 @@ import charli from "../media/charli.avif"
 			text;
 		color: transparent;
 	}
-
-	@media only screen and (min-width: 750px) {
-		.wife-pfp {
-			margin-bottom: 200px;
-		}
-
-		.my-pfp {
-			margin-bottom: 240px;
-		}
-	}
 </style>
 
 <Page description="im secretly a ghost">
-	Pronouns: <a
+	Pronouns:{" "}
+	<a
 		class="u-url highlightHover"
 		href="https://en.wikipedia.org/wiki/Transgender#Transfeminine"
 		class="u-pronoun"
@@ -49,33 +40,30 @@ import charli from "../media/charli.avif"
 	<article>
 		<Marquee text="miruna! charli!" />
 		<section>
+			<span>
+				<p>
+					<a href="https://hood.pink/">miruna!</a>
+				</p>
+			</span>
 			<figure>
-				<Image
-					width={128}
-					height={128}
-					src={miruna}
-					alt="hinako from watatabe!"
-					class="wife-pfp"
-				/>
+				<Image width={128} height={128} src={miruna} alt="vennie!" class="wife-pfp" />
+			</figure>
+			<figure>
+				<Image width={128} height={128} src={charli} alt="teto!" class="my-pfp" />
 			</figure>
 			<span>
+				<p>(you're here)</p>
+			</span>
+		</section>
+
+		<section>
+			<span>
 				<p>I like software because hardware makes me remove my headphones.</p>
-				<div id="string"></div>
 				<p>
 					I'm very bad at summarising myself but I have been described by some friends as
 					"calm but energetic" and that "i like horses."
 				</p>
-				<a href="https://hood.pink/">miruna! look!</a>
 			</span>
-			<figure>
-				<Image
-					width={128}
-					height={128}
-					src={charli}
-					alt="shiori from watatabe!"
-					class="my-pfp"
-				/>
-			</figure>
 		</section>
 	</article>
 </Page>

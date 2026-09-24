@@ -57,7 +57,7 @@
 	color-scheme: light dark;
 	accent-color: var(--accent);
 
-	--base-accent: #3e4867;
+	--base-accent: #d684a9;
 	--accent: light-dark(oklch(from var(--base-accent) 0.75 calc(c * 1.75) h), var(--base-accent));
 
 	--black: oklch(18% 0.003 17.5);
@@ -225,43 +225,17 @@ section {
 	figure {
 		user-select: none;
 		font-size: unset;
-		width: 55%;
+		width: 100%;
 
 		img {
 			width: 95%;
 			height: auto;
 		}
 	}
-}
 
-#string {
-	pointer-events: none;
-
-	width: 200%;
-	max-width: unset;
-	height: 200px;
-
-	margin-top: -150px;
-	margin-bottom: 40px;
-
-	&::before {
-		height: 100%;
-		width: 100%;
-		display: block;
-		content: "";
-
-		border: solid 2px;
-		border-color: white transparent transparent transparent;
-		border-radius: 200%/500px 500px 0 0;
-
-		transform: rotateX(180deg) rotateZ(-1deg);
+	span {
+		padding: 20px;
 	}
-
-	@media only screen and (max-width: 750px) {
-		display: none;
-	}
-
-	animation: string_move 5s infinite alternate ease-in-out;
 }
 
 a[href="https://hood.pink/"] {
